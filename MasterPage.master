@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>CarASPiration</title>
+        <link rel="stylesheet" href="css/main.css" />
+
+        <asp:ContentPlaceHolder id="headContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+
+        <header>
+            <asp:Menu  ID="Menu1" runat="server" Orientation="Horizontal" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder id="bodyContent" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <!-- FOOTER HERE -->
+        </footer>
+        </form>
+    </body>
+</html>
