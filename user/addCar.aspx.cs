@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
+using System.Web.Security;
+
 
 public partial class user_addCar : System.Web.UI.Page
 {
@@ -37,13 +39,13 @@ public partial class user_addCar : System.Web.UI.Page
         string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         SqlConnection con = new SqlConnection(dbString);
 
-        string insertQuery = "INSERT INTO Cars (owner_name, model, brand, year, energy, range, power, autonomy, img) VALUES(@owner_name, @model, @brand, @year, @energy, @range, @power, @autonomy, @img)";
+        string insertQuery = "INSERT INTO Cars (owner_id, model, brand, year, energy, range, power, autonomy, img) VALUES(@owner_id, @model, @brand, @year, @energy, @range, @power, @autonomy, @img)";
 
         con.Open();
 
         SqlCommand insertCarCmd = new SqlCommand(insertQuery, con);
 
-        insertCarCmd.Parameters.AddWithValue("@owner_name", this.User.Identity.Name);
+        insertCarCmd.Parameters.AddWithValue("@owner_id", Membership.GetUser(true).ProviderUserKey.ToString());
         insertCarCmd.Parameters.AddWithValue("@model", modelStr);
         insertCarCmd.Parameters.AddWithValue("@brand", brandStr);
         insertCarCmd.Parameters.AddWithValue("@year", int.Parse(yearStr));
