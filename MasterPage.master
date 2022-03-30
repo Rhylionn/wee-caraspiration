@@ -22,7 +22,7 @@
         </header>
         <div>
             <asp:ContentPlaceHolder id="bodyContent" runat="server">
-        
+                
             </asp:ContentPlaceHolder>
         </div>
         <footer>
