@@ -98,6 +98,6 @@
             </td>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT aspnet_Users.UserName, Cars.model AS carModel, Cars.energy AS carEnergy, Cars.range AS carRange, Cars.img AS carImg, rentals.Id AS rentalId, rentals.price AS rentalPrice FROM rentals INNER JOIN Cars ON rentals.car_id = Cars.Id INNER JOIN aspnet_Users ON rentals.tenant_id = aspnet_Users.UserId AND Cars.owner_id = aspnet_Users.UserId"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT aspnet_Users.UserName, Cars.model AS carModel, Cars.energy AS carEnergy, Cars.range AS carRange, Cars.img AS carImg, rentals.Id AS rentalId, rentals.price AS rentalPrice FROM rentals INNER JOIN Cars ON rentals.car_id = Cars.Id INNER JOIN aspnet_Users ON rentals.tenant_id = aspnet_Users.UserId AND Cars.owner_id = aspnet_Users.UserId WHERE (rentals.Id NOT IN (SELECT rental_id FROM Rentals_booking WHERE (rentals.Id = rental_id)))"></asp:SqlDataSource>
 </asp:Content>
 
