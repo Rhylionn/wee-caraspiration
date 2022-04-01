@@ -7,28 +7,26 @@
     <h1>My bookings</h1>
 
 
-    <asp:ListView ID="ListView1" runat="server" DataKeyNames="bookingId" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
+    <asp:ListView ID="myBookingsListView" runat="server" DataKeyNames="bookingId" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="myBookingsListView_SelectedIndexChanged">
         <EmptyDataTemplate>
             <span>No data was returned.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
-            <span style="">username:
+            <div style="">
+            Tenant:
             <asp:Label ID="usernameLabel" runat="server" Text='<%# Eval("username") %>' />
             <br />
-            carModel:
+            Model:
             <asp:Label ID="carModelLabel" runat="server" Text='<%# Eval("carModel") %>' />
             <br />
-            rentalStartDate:
+            Starting date:
             <asp:Label ID="rentalStartDateLabel" runat="server" Text='<%# Eval("rentalStartDate") %>' />
             <br />
-            rentalEndDate:
+            Ending date:
             <asp:Label ID="rentalEndDateLabel" runat="server" Text='<%# Eval("rentalEndDate") %>' />
             <br />
-            bookingId:
-            <asp:Label ID="bookingIdLabel" runat="server" Text='<%# Eval("bookingId") %>' />
-            <br />
-            <asp:Button ID="DeleteButton" runat="server" CommandName="Select" Text="Cancel booking" />
-<br /><br /></span>
+            <asp:Button ID="cancelBookingBtn" runat="server" CommandName="Select" Text="Cancel booking" />
+            <br /><br /></div>
         </ItemTemplate>
         <LayoutTemplate>
             <div id="itemPlaceholderContainer" runat="server" style="">

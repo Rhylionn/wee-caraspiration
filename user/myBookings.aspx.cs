@@ -17,10 +17,9 @@ public partial class user_myBookings : System.Web.UI.Page
         SqlDataSource1.SelectParameters["user_id"].DefaultValue = Membership.GetUser(true).ProviderUserKey.ToString();
     }
 
-    protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+    protected void myBookingsListView_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string something = ListView1.SelectedDataKey.Value.ToString();
-        message.Text = something;
+        string rentalBookingId = myBookingsListView.SelectedDataKey.Value.ToString();
 
         string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -28,18 +27,15 @@ public partial class user_myBookings : System.Web.UI.Page
 
         string deleteStmt = "DELETE FROM Rentals_booking WHERE Id = @Id";
 
-
         con.Open();
         SqlCommand cmd = new SqlCommand(deleteStmt, con);
 
-        cmd.Parameters.AddWithValue("@Id", something);
+        cmd.Parameters.AddWithValue("@Id", rentalBookingId);
 
         cmd.ExecuteNonQuery();
 
-        Membership.get
-
         con.Close();
 
-        message.Text = "Success";
+        message.Text = "Success!";
     }
 }

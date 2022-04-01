@@ -14,11 +14,50 @@
     </head>
     <body>
         <form id="form1" runat="server">
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+        <asp:SiteMapDataSource ID="DefaultSiteMapDataSource" runat="server" SiteMapProvider="DefaultSiteMap"/>
+        <asp:SiteMapDataSource ID="UsersSiteMapDataSource" runat="server" SiteMapProvider="UsersSiteMap"/>
+        
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
-        <header>
-            <asp:Menu  ID="Menu1" runat="server" Orientation="Horizontal" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+        <header style="margin-bottom: 30px; display: flex; justify-content: space-between;">
+            <div>
+                <asp:LoginView ID="menuLoginView" runat="server">
+
+                    <AnonymousTemplate>
+                        <asp:Menu  ID="defaultMenu" runat="server" Orientation="Horizontal" DataSourceID="DefaultSiteMapDataSource" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+                    </AnonymousTemplate>
+
+                    <RoleGroups>
+
+                        <asp:RoleGroup Roles="user">
+                            <ContentTemplate>
+                                <asp:Menu ID="usersMenu" runat="server" Orientation="Horizontal" DataSourceID="UsersSiteMapDataSource" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+
+                        <asp:RoleGroup Roles="admin">
+                            <ContentTemplate>
+                                <asp:Menu ID="adminMenu" runat="server" Orientation="Horizontal" DataSourceID="UsersSiteMapDataSource" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+
+                    </RoleGroups>
+                </asp:LoginView>
+            </div>
+            <div>
+                <asp:LoginView ID="signInLoginView" runat="server">
+
+                    <AnonymousTemplate>
+                        <asp:LoginStatus ID="loginStatusAnonymous" runat="server" />
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:LoginName ID="loginName" runat="server" />
+                        <asp:LoginStatus ID="loginStatusLogged" runat="server" LogoutPageUrl="~/Default.aspx" LogoutAction="Redirect"/>
+                    </LoggedInTemplate>
+
+                </asp:LoginView>
+            </div>
         </header>
         <div>
             <asp:ContentPlaceHolder id="bodyContent" runat="server">

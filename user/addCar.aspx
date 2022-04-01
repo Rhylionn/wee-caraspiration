@@ -81,6 +81,6 @@
 
     <asp:Button ID="btnAddCar" runat="server" Text="Add a car!" OnClick="Button1_Click" />
 
-    <asp:Label ID="resultMessage" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="resultMessage" runat="server" Text=""></asp:Label>
 </asp:Content>
 

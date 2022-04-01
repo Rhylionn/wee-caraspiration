@@ -98,5 +98,6 @@
     <asp:Button ID="acceptBtn" runat="server" Text="Accept!" OnClick="acceptBtn_Click" style="height: 29px" />
 
     <asp:Label ID="bookMessageLabel" runat="server" Text=""></asp:Label>
+    <asp:Label ID="testLabel" runat="server" Text=""></asp:Label>
 </asp:Content>
 

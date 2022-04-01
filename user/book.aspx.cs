@@ -22,9 +22,14 @@ public partial class user_book : System.Web.UI.Page
         else {
             Response.Redirect("~/Default.aspx");
         }
+
+        SqlDataSource1.SelectParameters["rental_id"].DefaultValue = this.rental_id;
     }
+
+
     protected void acceptBtn_Click(object sender, EventArgs e)
     {
+
         string startDateStr = (string)startDateTextbox.Text;
         string endDateStr = endDateTextbox.Text;
 
@@ -37,45 +42,64 @@ public partial class user_book : System.Web.UI.Page
 
         if (string.IsNullOrEmpty(startDateStr) || string.IsNullOrEmpty(endDateStr) || string.IsNullOrEmpty(cardNumberStr) || string.IsNullOrEmpty(cardNameStr) || string.IsNullOrEmpty(cardDateStr) || string.IsNullOrEmpty(cardCodeStr))
         {
-
             bookMessageLabel.Text = "All fields need to be filled";
-
         }
         else {
 
-            string[] startDateArray = startDateStr.Split('/');
-            string[] endDateArray = endDateStr.Split('/');
+            string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(dbString);
 
-            DateTime startDate = new DateTime(int.Parse(startDateArray[2]), int.Parse(startDateArray[1]), int.Parse(startDateArray[0]));
-            DateTime endDate = new DateTime(int.Parse(endDateArray[2]), int.Parse(endDateArray[1]), int.Parse(endDateArray[0]));
+            string selectStmt = "SELECT Id, tenant_id FROM rentals WHERE Id = @Id";
 
-            TimeSpan timeSpan = endDate.Subtract(startDate);
+            con.Open();
 
-            if (timeSpan.TotalHours < 0)
+            SqlCommand selectCmd = new SqlCommand(selectStmt, con);
+            selectCmd.Parameters.AddWithValue("@Id", (object)this.rental_id);
+
+            SqlDataReader dr = selectCmd.ExecuteReader();
+
+            string tenant_id = dr.Read() ? dr["tenant_id"].ToString() : null;
+
+            dr.Close();
+            con.Close();
+
+            if(tenant_id.Equals(Membership.GetUser(false).ProviderUserKey.ToString()))
             {
-                bookMessageLabel.Text = "Ending date cannot be before the starting one.";
-            }
-            else { 
-                string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                bookMessageLabel.Text = "You can't book your own rental!";
+            } 
+            else {
 
-                SqlConnection con = new SqlConnection(dbString);
+                string[] startDateArray = startDateStr.Split('/');
+                string[] endDateArray = endDateStr.Split('/');
 
-                string insertStmt = "INSERT INTO Rentals_booking (rental_id, user_id, startDate, endDate) VALUES(@rental_id, @user_id, @startDate, @endDate)";
+                DateTime startDate = new DateTime(int.Parse(startDateArray[2]), int.Parse(startDateArray[1]), int.Parse(startDateArray[0]));
+                DateTime endDate = new DateTime(int.Parse(endDateArray[2]), int.Parse(endDateArray[1]), int.Parse(endDateArray[0]));
 
-                con.Open();
+                TimeSpan timeSpan = endDate.Subtract(startDate);
 
-                SqlCommand cmd = new SqlCommand(insertStmt, con);
+                if (timeSpan.TotalHours < 0)
+                {
+                    bookMessageLabel.Text = "Ending date cannot be before the starting one.";
+                }
+                else 
+                {  
+                    string insertStmt = "INSERT INTO Rentals_booking (rental_id, user_id, startDate, endDate) VALUES(@rental_id, @user_id, @startDate, @endDate)";
 
-                cmd.Parameters.AddWithValue("@rental_id", this.rental_id);
-                cmd.Parameters.AddWithValue("@user_id", Membership.GetUser(true).ProviderUserKey.ToString());
-                cmd.Parameters.AddWithValue("@startDate", startDate);
-                cmd.Parameters.AddWithValue("@endDate", endDate);
+                    con.Open();
 
-                cmd.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand(insertStmt, con);
 
-                con.Close();
+                    cmd.Parameters.AddWithValue("@rental_id", this.rental_id);
+                    cmd.Parameters.AddWithValue("@user_id", Membership.GetUser(true).ProviderUserKey.ToString());
+                    cmd.Parameters.AddWithValue("@startDate", startDate);
+                    cmd.Parameters.AddWithValue("@endDate", endDate);
 
-                bookMessageLabel.Text = "The car is now yours!";
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    bookMessageLabel.Text = "The car is now yours!";
+                }
             }
         }
     }
