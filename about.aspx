@@ -7,4 +7,3 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <h1>About page</h1>
 </asp:Content>
-
