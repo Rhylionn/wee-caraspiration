@@ -5,8 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <h1>My cars</h1>
-    <asp:LoginName ID="loginName" runat="server" />
-    <asp:Label ID="test" runat="server" Text=""></asp:Label>
     <asp:ListView ID="carsListView" runat="server" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
             <div style="">
@@ -73,7 +71,7 @@
             <br /><br /></span>
         </EditItemTemplate>
         <EmptyDataTemplate>
-            <span>No data was returned.</span>
+            <span>No cars added for the moment, you can still add one <asp:HyperLink ID="addCarHyperLink" runat="server">here</asp:HyperLink>.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
             <div style="">

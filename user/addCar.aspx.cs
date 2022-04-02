@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
 
 using System.Web.Security;
+
 
 
 public partial class user_addCar : System.Web.UI.Page
@@ -29,35 +30,84 @@ public partial class user_addCar : System.Web.UI.Page
         string powerStr = textBoxPower.Text;
         string autonomyStr = textBoxAutonomy.Text;
 
-        if (fileUploadImage.HasFile)
+        if (string.IsNullOrEmpty(modelStr) || string.IsNullOrEmpty(brandStr) || string.IsNullOrEmpty(yearStr) || string.IsNullOrEmpty(energyStr) || string.IsNullOrEmpty(rangeStr) || string.IsNullOrEmpty(powerStr) || string.IsNullOrEmpty(autonomyStr))
         {
-            fileUploadImage.SaveAs(Server.MapPath("~/images/cars/" + fileUploadImage.FileName));
+            resultMessage.Text = "You need to complete all the fields!";
         }
+        else {
 
-        string imageStr = "~/images/cars/" + fileUploadImage.FileName;
+            if (fileUploadImage.HasFile)
+            {
+                string fileExtension = Path.GetExtension(fileUploadImage.FileName);
 
-        string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        SqlConnection con = new SqlConnection(dbString);
+                if (fileExtension.Equals(".jpg") || fileExtension.Equals(".JPG") || fileExtension.Equals(".jpeg") || fileExtension.Equals(".gif"))
+                {
 
-        string insertQuery = "INSERT INTO Cars (owner_id, model, brand, year, energy, range, power, autonomy, img) VALUES(@owner_id, @model, @brand, @year, @energy, @range, @power, @autonomy, @img)";
+                    string imageStr = "~/images/cars/" + this.b64url() + fileExtension;
 
-        con.Open();
+                    string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                    SqlConnection con = new SqlConnection(dbString);
 
-        SqlCommand insertCarCmd = new SqlCommand(insertQuery, con);
+                    string selectStmt = "SELECT COUNT(*) FROM Cars WHERE owner_id = @Id AND (LOWER(model) = @model AND LOWER(brand) = @brand AND year = @year)";
+                    con.Open();
 
-        insertCarCmd.Parameters.AddWithValue("@owner_id", Membership.GetUser(true).ProviderUserKey.ToString());
-        insertCarCmd.Parameters.AddWithValue("@model", modelStr);
-        insertCarCmd.Parameters.AddWithValue("@brand", brandStr);
-        insertCarCmd.Parameters.AddWithValue("@year", int.Parse(yearStr));
-        insertCarCmd.Parameters.AddWithValue("@energy", energyStr);
-        insertCarCmd.Parameters.AddWithValue("@range", rangeStr);
-        insertCarCmd.Parameters.AddWithValue("@power", int.Parse(powerStr));
-        insertCarCmd.Parameters.AddWithValue("@autonomy", int.Parse(autonomyStr));
-        insertCarCmd.Parameters.AddWithValue("@img", imageStr);
+                    SqlCommand selectCarCmd = new SqlCommand(selectStmt, con);
 
-        insertCarCmd.ExecuteNonQuery();
-        con.Close();
+                    selectCarCmd.Parameters.AddWithValue("@Id", Membership.GetUser(false).ProviderUserKey.ToString());
+                    selectCarCmd.Parameters.AddWithValue("@model", modelStr.ToLower());
+                    selectCarCmd.Parameters.AddWithValue("@brand", brandStr.ToLower());
+                    selectCarCmd.Parameters.AddWithValue("@year", int.Parse(yearStr));
 
-        resultMessage.Text = "Success, your car has been added!";
+                    Int32 affectedRows = (Int32) selectCarCmd.ExecuteScalar();
+
+                    con.Close();
+
+                    if (affectedRows > 0)
+                    {
+                        resultMessage.Text = "This car has already been added!";
+                    }
+                    else
+                    {
+                        fileUploadImage.SaveAs(Server.MapPath(imageStr));
+
+                        string insertQuery = "INSERT INTO Cars (owner_id, model, brand, year, energy, range, power, autonomy, img) VALUES(@owner_id, @model, @brand, @year, @energy, @range, @power, @autonomy, @img)";
+
+                        con.Open();
+
+                        SqlCommand insertCarCmd = new SqlCommand(insertQuery, con);
+
+                        insertCarCmd.Parameters.AddWithValue("@owner_id", Membership.GetUser(true).ProviderUserKey.ToString());
+                        insertCarCmd.Parameters.AddWithValue("@model", modelStr);
+                        insertCarCmd.Parameters.AddWithValue("@brand", brandStr);
+                        insertCarCmd.Parameters.AddWithValue("@year", int.Parse(yearStr));
+                        insertCarCmd.Parameters.AddWithValue("@energy", energyStr);
+                        insertCarCmd.Parameters.AddWithValue("@range", rangeStr);
+                        insertCarCmd.Parameters.AddWithValue("@power", int.Parse(powerStr));
+                        insertCarCmd.Parameters.AddWithValue("@autonomy", int.Parse(autonomyStr));
+                        insertCarCmd.Parameters.AddWithValue("@img", imageStr);
+
+                        insertCarCmd.ExecuteNonQuery();
+                        con.Close();
+
+                        resultMessage.Text = "Success, your can has been successfully added!";
+                    }
+
+                }
+                else
+                {
+                    resultMessage.Text = "File extension not allowed!";
+                }
+            }
+            else
+            {
+                resultMessage.Text = "Please upload an image.";
+            } 
+        
+        }
+    }
+
+    private string b64url()
+    {
+        return Convert.ToBase64String(Guid.NewGuid().ToByteArray()) .Replace("+", "-").Replace("/", "-").Replace("=", "");
     }
 }

@@ -11,17 +11,17 @@
     <br />
 
     <asp:Label ID="labelModel" runat="server" Text="Label">Model:</asp:Label>
-    <asp:TextBox ID="textBoxModel" runat="server"></asp:TextBox>
+    <asp:TextBox ID="textBoxModel" runat="server" autocomplete="off"></asp:TextBox>
 
     <br />
 
     <asp:Label ID="labelBrand" runat="server" Text="Label">Brand:</asp:Label>
-    <asp:TextBox ID="textBoxBrand" runat="server"></asp:TextBox>
+    <asp:TextBox ID="textBoxBrand" runat="server" autocomplete="off"></asp:TextBox>
 
     <br />
 
     <asp:Label ID="labelYear" runat="server" Text="Label">Year:</asp:Label>
-    <asp:TextBox ID="textBoxYear" runat="server"></asp:TextBox>
+    <asp:TextBox ID="textBoxYear" runat="server" autocomplete="off"></asp:TextBox>
 
     <asp:RegularExpressionValidator ID="yearExpressionValidator"
         ControlToValidate="textBoxYear" runat="server"
@@ -48,12 +48,13 @@
         <asp:ListItem Text="Premium" Value="premium"></asp:ListItem>
         <asp:ListItem Text="Luxury" Value="luxury"></asp:ListItem>
         <asp:ListItem Text="4x4" Value="4x4"></asp:ListItem>
+        <asp:ListItem Text="SUV" Value="4x4"></asp:ListItem>
     </asp:DropDownList>
 
     <br />
 
     <asp:Label ID="labelPower" runat="server" Text="Label">Power:</asp:Label>
-    <asp:TextBox ID="textBoxPower" runat="server"></asp:TextBox>
+    <asp:TextBox ID="textBoxPower" runat="server" autocomplete="off"></asp:TextBox>
 
     <asp:RegularExpressionValidator ID="powerExpressionValidator"
         ControlToValidate="textBoxPower" runat="server"
@@ -64,7 +65,7 @@
     <br />
 
     <asp:Label ID="labelAutonomy" runat="server" Text="Label">Autonomy:</asp:Label>
-    <asp:TextBox ID="textBoxAutonomy" runat="server"></asp:TextBox>
+    <asp:TextBox ID="textBoxAutonomy" runat="server" autocomplete="off"></asp:TextBox>
 
     <br />
 

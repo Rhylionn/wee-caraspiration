@@ -18,6 +18,8 @@ public partial class user_leaseMyCar : System.Web.UI.Page
     }
     protected void leaseBtn_Click(object sender, EventArgs e)
     {
+
+        // Check if a car have been selected
         string carIdStr = carsDropdownList.SelectedValue;
         string priceStr = textBoxPrice.Text;
 
