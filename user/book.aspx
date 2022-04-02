@@ -57,6 +57,12 @@
             <asp:CalendarExtender ID="endDateCE" Format="dd/MM/yyyy" runat="server" TargetControlID="endDateTextbox"></asp:CalendarExtender>
         </div>
     </div>
+
+    <br />
+
+    <asp:Label ID="totalPriceLabel" runat="server" Text=""></asp:Label>
+
+    <br />
     <h3>Payment</h3>
     <p>This is a fake form for the purpose of the assignment.</p>
     <div>

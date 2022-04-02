@@ -14,7 +14,7 @@
         <EmptyDataTemplate>
             <table runat="server" style="">
                 <tr>
-                    <td>No rentals for now :(</td>
+                    <td>No rentals for now, be the first one to <asp:HyperLink ID="leaseHyperLink" runat="server" NavigateUrl="~/user/leaseMyCar.aspx">lease one</asp:HyperLink>.</td>
                 </tr>
             </table>
         </EmptyDataTemplate>

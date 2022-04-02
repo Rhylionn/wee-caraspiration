@@ -9,7 +9,7 @@
 
     <asp:ListView ID="myBookingsListView" runat="server" DataKeyNames="bookingId" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="myBookingsListView_SelectedIndexChanged">
         <EmptyDataTemplate>
-            <span>No data was returned.</span>
+            <span>No bookings here for know, check out the latest leased cars <asp:HyperLink ID="leasedCarsHyperLink" runat="server" NavigateUrl="~/Default.aspx">here</asp:HyperLink>.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
             <div style="">

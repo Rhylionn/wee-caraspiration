@@ -19,29 +19,84 @@ public partial class user_leaseMyCar : System.Web.UI.Page
     protected void leaseBtn_Click(object sender, EventArgs e)
     {
 
-        // Check if a car have been selected
         string carIdStr = carsDropdownList.SelectedValue;
         string priceStr = textBoxPrice.Text;
 
-        string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        SqlConnection con = new SqlConnection(dbString);
+        if (string.IsNullOrEmpty(priceStr) || string.IsNullOrEmpty(carIdStr))
+        {
 
-        string insertStmt = "INSERT INTO rentals (tenant_id, car_id, price) VALUES(@tenant_id, @car_id, @price)";
+            leaseMessage.Text = "Please, fill all inputs";
 
-        con.Open();
+        }
+        else {
 
-        SqlCommand sqlCommand = new SqlCommand(insertStmt, con);
+            string dbString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(dbString);
 
-        sqlCommand.Parameters.AddWithValue("@tenant_id", Membership.GetUser(true).ProviderUserKey.ToString());
-        sqlCommand.Parameters.AddWithValue("@car_id", carIdStr);
-        sqlCommand.Parameters.AddWithValue("@price", float.Parse(priceStr));
+            string carExistsStmt = "SELECT COUNT(*) FROM Cars WHERE Id = @car_id";
 
-        sqlCommand.ExecuteNonQuery();
 
-        con.Close();
+            con.Open();
 
-        leaseMessage.Text = "Success, you now leased your car";
+            SqlCommand carExistsCmd = new SqlCommand(carExistsStmt, con);
+            carExistsCmd.Parameters.AddWithValue("@car_id", carIdStr);
+
+            Int32 nbCars = (Int32) carExistsCmd.ExecuteScalar();
+
+            con.Close();
+
+            if (nbCars > 0)
+            {
+
+                string carRentedStmt = "SELECT COUNT(*) FROM rentals WHERE car_id = @carId";
+
+                con.Open();
+                SqlCommand selectRentalsCmd = new SqlCommand(carRentedStmt, con);
+                selectRentalsCmd.Parameters.AddWithValue("@carId", carIdStr);
+
+                Int32 selectedRentals = (Int32)selectRentalsCmd.ExecuteScalar();
+
+                con.Close();
+
+                if (selectedRentals > 0)
+                {
+                    leaseMessage.Text = "This car have already been leased";
+                }
+                else {
+
+                    string insertStmt = "INSERT INTO rentals (tenant_id, car_id, price) VALUES(@tenant_id, @car_id, @price)";
+
+                    con.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand(insertStmt, con);
+
+                    sqlCommand.Parameters.AddWithValue("@tenant_id", Membership.GetUser(true).ProviderUserKey.ToString());
+                    sqlCommand.Parameters.AddWithValue("@car_id", carIdStr);
+                    sqlCommand.Parameters.AddWithValue("@price", float.Parse(priceStr));
+
+                    sqlCommand.ExecuteNonQuery();
+
+                    con.Close();
+
+                    leaseMessage.Text = "Success, you now leased your car";     
+
+                }
+
+            }
+            else {
+                leaseMessage.Text = "This car doesn't exists";
+            }
+
+        }
+
+
+        // Check if a car have been selected and exists
+
+        
+
+        // Check if car already leased
+
         
     }
 }

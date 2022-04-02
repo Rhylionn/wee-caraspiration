@@ -8,7 +8,7 @@
     <asp:Label ID="chooseCarLabel" runat="server" Text="Choose a car:"></asp:Label>
     <br />
     <asp:DropDownList ID="carsDropdownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="model" DataValueField="Id" AppendDataBoundItems="True">
-        <asp:ListItem Selected="True" Text="Select a car..."></asp:ListItem>
+        <asp:ListItem Selected="True" Text="Select a car..." Value=""></asp:ListItem>
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT model, Id FROM Cars WHERE (owner_id = @owner_id) AND (Id NOT IN (SELECT car_id FROM rentals))">
         <SelectParameters>

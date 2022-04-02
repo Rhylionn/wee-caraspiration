@@ -8,8 +8,6 @@
     <asp:ListView ID="carsListView" runat="server" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
             <div style="">
-            Owner_id:
-            <asp:Label ID="owner_idLabel" runat="server" Text='<%# Eval("owner_id") %>' />
             <br />
             Model:
             <asp:Label ID="modelLabel" runat="server" Text='<%# Eval("model") %>' />
@@ -39,8 +37,6 @@
             </div>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <span style="">owner_id:
-            <asp:TextBox ID="owner_idTextBox" runat="server" Text='<%# Bind("owner_id") %>' />
             <br />
             model:
             <asp:TextBox ID="modelTextBox" runat="server" Text='<%# Bind("model") %>' />
@@ -75,8 +71,6 @@
         </EmptyDataTemplate>
         <ItemTemplate>
             <div style="">
-            Owner_id:
-            <asp:Label ID="owner_idLabel" runat="server" Text='<%# Eval("owner_id") %>' />
             <br />
             Model:
             <asp:Label ID="modelLabel" runat="server" Text='<%# Eval("model") %>' />
@@ -114,8 +108,6 @@
         </LayoutTemplate>
         <SelectedItemTemplate>
             <div style="">
-            Owner_id:
-            <asp:Label ID="owner_idLabel" runat="server" Text='<%# Eval("owner_id") %>' />
             <br />
             Model:
             <asp:Label ID="modelLabel" runat="server" Text='<%# Eval("model") %>' />
