@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <h1>My cars</h1>
-    <asp:ListView ID="carsListView" runat="server" DataSourceID="SqlDataSource1" OnS>
+    <asp:ListView ID="carsListView" runat="server" DataSourceID="SqlDataSource1" DeleteMethod="carsListView_DeleteItem">
         <AlternatingItemTemplate>
             <span style="">model:
             <asp:Label ID="modelLabel" runat="server" Text='<%# Eval("model") %>' />
@@ -190,5 +190,7 @@
             <asp:Parameter Name="Id" />
         </UpdateParameters>
     </asp:SqlDataSource>
-</asp:Content>
 
+
+    <asp:Label ID="test" runat="server" Text=""></asp:Label>
+</asp:Content>
