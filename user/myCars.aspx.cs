@@ -12,4 +12,10 @@ public partial class user_myCars : System.Web.UI.Page
     {
         SqlDataSource1.SelectParameters["owner_id"].DefaultValue = Membership.GetUser(true).ProviderUserKey.ToString();
     }
+
+    // The id parameter name should match the DataKeyNames value set on the control
+    public void carsListView_DeleteItem(int id)
+    {
+        test.Text = "delete clicked";
+    }
 }
