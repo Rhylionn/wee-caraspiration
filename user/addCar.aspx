@@ -2,9 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
     <title>CarASPiration :: Add car</title>
+    <link rel="stylesheet" href="style/user.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
-    <h1>Add a car to my account</h1>
+    <div class="head-container">
+        <h1>Add a car to my account</h1>
+    </div>
+    
     <asp:Label ID="Label1" runat="server" Text="Label">Owner:</asp:Label>
     <asp:LoginName ID="loginName" runat="server" />
 

@@ -1,10 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
-    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="style/default.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
-    <h1>This is the home page</h1>
+    <div class="head-container">
+
+        <h1>Car ASPiration</h1>
+        <h5>By far the best car rental service using ASP</h5>
+
+    </div>
 
     <hr />
 
