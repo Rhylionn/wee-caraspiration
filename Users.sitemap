@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="default.aspx" title="Home page"  description="Home page">
-    <siteMapNode url="/user/myCars.aspx" title="My cars"  description="List of user car" >
-      <siteMapNode url="/user/addCar.aspx" title="Add a cars"  description="Add a car to user account" />
-      <siteMapNode url="/user/leaseMyCar.aspx" title="Lease a cars"  description="Lease a user's car" />
+    <siteMapNode url="~/user/myCars.aspx" title="My cars"  description="List of user car" >
+      <siteMapNode url="~/user/addCar.aspx" title="Add a cars"  description="Add a car to user account" />
+      <siteMapNode url="~/user/leaseMyCar.aspx" title="Lease a cars"  description="Lease a user's car" />
     </siteMapNode>
-    <siteMapNode url="/user/myBookings.aspx" title="My bookings"  description="Displays user's bookings" />
+    <siteMapNode url="~/user/myBookings.aspx" title="My bookings"  description="Displays user's bookings" />
   </siteMapNode>
 </siteMap>
