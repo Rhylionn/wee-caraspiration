@@ -59,7 +59,7 @@
             <asp:Image style="height: 200px; border-radius: 10px;" ID="carImage" runat="server" ImageUrl='<%# Bind("carImage") %>'
                 AlternateText="Car image" />
             <br />
-            <asp:Button ID="bookBtn" runat="server" Text="Book this car!" OnClick="bookBtn_Click" style="margin-top: 10px; margin-left: 35%; margin-right: 35%; text-decoration: none; color: #BF4342; background-color: #fff; padding: 5px; border-radius: 10px; border: solid black; cursor: pointer; font-weight: bold;"/>
+            <asp:Button ID="bookBtn" runat="server" Text="Book this car!" OnClick="bookBtn_Click" class="btn-style" style="margin-top: 10px; margin-left: 35%; margin-right: 35%;"/>
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"

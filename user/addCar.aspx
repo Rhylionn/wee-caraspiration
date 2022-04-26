@@ -9,7 +9,7 @@
         <h1>Add a car to my account</h1>
     </div>
 
-    <div style="background-color: #FFF3E4; display: flex; flex-direction: column; width: fit-content;margin: 41%; margin-top: 30px; padding: 20px; border-radius: 10px;">
+    <div class="form-container">
         <div style="display: flex; justify-content: center; gap: 5px;">
         <asp:Label ID="Label1" runat="server" Text="Label"><b>Owner:</b></asp:Label>
         <asp:LoginName ID="loginName" runat="server" />
@@ -84,7 +84,7 @@
     </div>
         <br />
 
-        <asp:Button ID="btnAddCar" runat="server" Text="Add a car!" OnClick="Button1_Click" style="text-decoration: none; color: #BF4342; background-color: #fff; padding: 5px; border-radius: 10px; border: solid black; cursor: pointer; font-weight: bold;"/>
+        <asp:Button ID="btnAddCar" runat="server" Text="Add a car!" OnClick="Button1_Click" class="btn-style"/>
 
         <asp:Label ID="resultMessage" runat="server" Text=""></asp:Label>
     </div>

@@ -69,7 +69,7 @@
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            <asp:HyperLink id="hyperLinkRentalinfo" style="text-decoration: none; color: #BF4342; background-color: #fff; padding: 5px; border-radius: 10px; border: solid black; cursor: pointer; font-weight: bold;" 
+                            <asp:HyperLink id="hyperLinkRentalinfo" class="btn-style" 
                                 NavigateUrl='<%# "rentalInfo.aspx?rent=" + Eval("rentalId") %>' Text="Show more"
                                 runat="server" />
                         </div>
