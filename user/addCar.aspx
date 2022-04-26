@@ -9,11 +9,13 @@
         <h1>Add a car to my account</h1>
     </div>
     
-    <asp:Label ID="Label1" runat="server" Text="Label">Owner:</asp:Label>
-    <asp:LoginName ID="loginName" runat="server" />
-
-    <br />
-
+    <div style="background-color: #FFF3E4; display: flex;">
+        <asp:Label ID="Label1" runat="server" Text="Label">Owner:</asp:Label>
+        <asp:LoginName ID="loginName" runat="server" />
+        
+        <br />
+        
+        <div>
     <asp:Label ID="labelModel" runat="server" Text="Label">Model:</asp:Label>
     <asp:TextBox ID="textBoxModel" runat="server" autocomplete="off"></asp:TextBox>
 
@@ -42,9 +44,9 @@
         <asp:ListItem Text="Electric" Value="electric"></asp:ListItem>
         <asp:ListItem Text="Hybrid" Value="hybrid"></asp:ListItem>
     </asp:DropDownList>
-
+</div>
     <br />
-
+<div>
     <asp:Label ID="labelRange" runat="server" Text="Label">Range:</asp:Label>
     <asp:DropDownList ID="dropdownListRange" runat="server">
         <asp:ListItem Text="Utilitarian" Value="utilitarian"></asp:ListItem>
@@ -82,10 +84,12 @@
         ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.jpg|.JPG|.gif|.GIF)$"   
         ControlToValidate="fileUploadImage">  
     </asp:RegularExpressionValidator>
+</div>
     <br />
 
     <asp:Button ID="btnAddCar" runat="server" Text="Add a car!" OnClick="Button1_Click" />
 
     <asp:Label ID="resultMessage" runat="server" Text=""></asp:Label>
+</div>
 </asp:Content>
 

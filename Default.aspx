@@ -37,34 +37,39 @@
         <ItemTemplate>
             <td runat="server" style="background-color: #FFF3E4; padding: 10px; border-radius: 10px; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 50px;">
-                    <div style="display: flex; flex-direction: column; width: 30%; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: column; width: 32%; justify-content: space-between;">
                         <div style="display: flex; gap: 5px;">
-                            User name:
+                            <b>User name:</b>
+                            
                             <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            Model:
+                            <b>Model:</b>
+                            
                             <asp:Label ID="carModelLabel" runat="server" Text='<%# Eval("carModel") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            Energy:
+                            <b>Energy:</b>
+                            
                             <asp:Label ID="carEnergyLabel" runat="server" Text='<%# Eval("carEnergy") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            Range:
+                            <b>Range:</b>
+                            
                             <asp:Label ID="carRangeLabel" runat="server" Text='<%# Eval("carRange") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            Price:
+                            <b>Price:</b>
+                            
                             <asp:Label ID="rentalPriceLabel" runat="server" Text='<%# Eval("rentalPrice") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            <asp:HyperLink id="hyperLinkRentalinfo"
+                            <asp:HyperLink id="hyperLinkRentalinfo" style="text-decoration: none; color: #BF4342; background-color: #fff; padding: 5px; border-radius: 10px; border: solid black; cursor: pointer; font-weight: bold;" 
                                 NavigateUrl='<%# "rentalInfo.aspx?rent=" + Eval("rentalId") %>' Text="Show more"
                                 runat="server" />
                         </div>
@@ -101,7 +106,8 @@
             </table>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <td runat="server" style="">UserName:
+            <td runat="server" style="">
+                UserName:
                 <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
                 <br />
                 carModel:
