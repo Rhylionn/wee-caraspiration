@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>CarASPiration</title>
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="style/main.css" />
 
         <asp:ContentPlaceHolder id="headContent" runat="server">
         </asp:ContentPlaceHolder>
@@ -20,7 +20,7 @@
         
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
-        <header style="margin-bottom: 30px; display: flex; justify-content: space-between;">
+        <header>
             <div>
                 <asp:LoginView ID="menuLoginView" runat="server">
 

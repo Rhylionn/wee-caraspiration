@@ -5,6 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
 
+    <div class="head-container">
+        <h1>Lease a car</h1>
+    </div>
+
+    <div class="form-container">
     <asp:Label ID="chooseCarLabel" runat="server" Text="Choose a car:"></asp:Label>
     <br />
     <asp:DropDownList ID="carsDropdownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="model" DataValueField="Id" AppendDataBoundItems="True">
@@ -30,10 +35,10 @@
 
     <br />
 
-    <asp:Button ID="leaseBtn" runat="server" Text="Lease my car!" OnClick="leaseBtn_Click" />
+    <asp:Button class="btn-style" ID="leaseBtn" runat="server" Text="Lease my car!" OnClick="leaseBtn_Click" />
 
     <br />
-
+</div>
     <asp:Label ID="leaseMessage" runat="server" Text=""></asp:Label>
 </asp:Content>
 
