@@ -36,6 +36,17 @@ header{
     border-radius: 10px;
 }
 
+.row-form-container{
+    background-color: #FFF3E4; 
+    display: flex; 
+    flex-direction: column; 
+    width: fit-content;
+    gap: 10px;
+    margin: 30px 20px 30px;
+    padding: 20px; 
+    border-radius: 10px;
+}
+
 .btn-style{
     text-decoration: none; 
     color: #BF4342; 
