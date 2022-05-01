@@ -39,6 +39,6 @@
 
     <br />
 </div>
-    <asp:Label ID="leaseMessage" runat="server" Text=""></asp:Label>
+    <asp:Label class="success-msg" ID="leaseMessage" runat="server" Text=""></asp:Label>
 </asp:Content>
 

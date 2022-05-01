@@ -15,7 +15,8 @@
                     runat="server" NavigateUrl="~/Default.aspx">here</asp:HyperLink>.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
-            <div class="row-form-container">
+            <div style="display: flex; justify-content: center;">
+            <div class="triple-form-container">
                 <div style="display: flex; flex-direction: column;">
                     <b>Tenant:</b>
                     
@@ -38,6 +39,7 @@
                     <br/><br/>
                 </div>
             </div>
+        </div>
         </ItemTemplate>
         <LayoutTemplate>
             <div id="itemPlaceholderContainer" runat="server" style="">

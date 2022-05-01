@@ -117,7 +117,7 @@
             <asp:Button class="btn-style" ID="acceptBtn" runat="server" Text="Accept!" OnClick="acceptBtn_Click" style="height: 29px" />
         </div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center;">
+    <div class="success-msg">
         <asp:Label ID="bookMessageLabel" runat="server" Text=""></asp:Label>
         <asp:Label ID="testLabel" runat="server" Text=""></asp:Label>
     </div>

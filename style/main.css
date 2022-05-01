@@ -47,6 +47,17 @@ header{
     border-radius: 10px;
 }
 
+.triple-form-container{
+    background-color: #FFF3E4; 
+    display: flex; 
+    flex-direction: column; 
+    width: 500px;
+    gap: 10px;
+    margin: 30px 20px 30px;
+    padding: 20px; 
+    border-radius: 10px;
+}
+
 .btn-style{
     text-decoration: none; 
     color: #BF4342; 
@@ -56,6 +67,13 @@ header{
     border: solid black; 
     cursor: pointer; 
     font-weight: bold;
+}
+
+.success-msg{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
 }
 
 
