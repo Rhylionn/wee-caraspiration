@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="css/about.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+    <div class="head-container">
     <h1>Edit users</h1>
-
+    </div>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" InsertItemPosition="LastItem">
         <AlternatingItemTemplate>
             <span style="">UserId:
