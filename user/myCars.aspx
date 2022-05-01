@@ -38,7 +38,7 @@
             <br />
         </EditItemTemplate>
         <EmptyDataTemplate>
-            <span>No data was returned.</span>
+            <span>No car registered for now :(</span>
         </EmptyDataTemplate>
         <ItemTemplate>
             <span style="">
@@ -110,6 +110,6 @@
             </span>
         </SelectedItemTemplate>
     </asp:ListView>
-
+    <asp:Label ID="test" runat="server" Text=""></asp:Label>
     <asp:Label ID="feedbackLabel" runat="server" Text=""></asp:Label>
 </asp:Content>

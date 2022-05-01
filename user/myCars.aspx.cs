@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 
+using System.IO;
+
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -61,7 +63,17 @@ public partial class user_myCars : System.Web.UI.Page
 
         SqlConnection con = new SqlConnection(dbString);
 
-        
+        // Searching for the img path a secure way
+        string selectQuery = "SELECT img FROM Cars WHERE id = @Id AND owner_id = @owner_id";
+
+        con.Open();
+        SqlCommand imgCmd = new SqlCommand(selectQuery, con);
+        imgCmd.Parameters.AddWithValue("@Id", carId);
+        imgCmd.Parameters.AddWithValue("@owner_id", userId);
+
+        string imgDbPath = (string) imgCmd.ExecuteScalar();
+        con.Close();
+
         // Check the owner id to make sure nobody can delete someone else car by bruteforcing and editing the html code.
         string deleteQuery = "DELETE FROM Cars WHERE id = @Id AND owner_id = @owner_id";
 
@@ -70,8 +82,17 @@ public partial class user_myCars : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Id", carId);
         cmd.Parameters.AddWithValue("@owner_id", userId);
 
+        // Deleting the db row
         cmd.ExecuteNonQuery();
         con.Close();
+
+        // Deleting the image
+
+        string imgPath = Server.MapPath(imgDbPath);
+
+        if (File.Exists(imgPath)) {
+            File.Delete(imgPath);
+        }
 
         feedbackLabel.Text = "The car has been sucessfully deleted";
         fillListView(getDataTable());
