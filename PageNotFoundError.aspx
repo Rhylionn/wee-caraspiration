@@ -4,8 +4,12 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+    <div class="head-container">
     <h1>Error 404</h1>
-    <h3>We couldn't find the page you are searching for :(</h3>
-    <asp:Button ID="redirectButton" runat="server" Text="Go to Home" OnClick="redirectButton_Click"/>
+</div>
+<div class="error-box">
+<h3>We couldn't find the page you are searching for :(</h3>
+    <asp:Button class="btn-style" ID="redirectButton" runat="server" Text="Go to Home" OnClick="redirectButton_Click"/>
+</div>
 </asp:Content>
 

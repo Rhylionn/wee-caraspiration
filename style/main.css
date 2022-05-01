@@ -76,4 +76,15 @@ header{
     text-align: center;
 }
 
+.error-box{
+    background-color: #FFF3E4; 
+    display: flex; 
+    gap: 30px;
+    flex-direction: column; 
+    width: 400px;
+    margin: 30px 36% 30px;
+    padding: 20px; 
+    border-radius: 10px;
+}
+
 
