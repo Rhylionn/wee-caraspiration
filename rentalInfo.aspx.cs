@@ -31,6 +31,6 @@ public partial class rentalInfo : System.Web.UI.Page
 
     protected void bookBtn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/user/book.aspx?rentalId=" + this.rental_id);
+        Response.Redirect("~/user/book.aspx?rentalId=" + this.rental_id);
     }
 }
