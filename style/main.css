@@ -87,4 +87,11 @@ header{
     border-radius: 10px;
 }
 
+.input-style{
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid #000;
+}
+
 

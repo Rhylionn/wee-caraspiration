@@ -12,7 +12,7 @@
     <div class="form-container">
     <asp:Label ID="chooseCarLabel" runat="server" Text="Choose a car:"></asp:Label>
     <br />
-    <asp:DropDownList ID="carsDropdownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="model" DataValueField="Id" AppendDataBoundItems="True">
+    <asp:DropDownList class="input-style" ID="carsDropdownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="model" DataValueField="Id" AppendDataBoundItems="True">
         <asp:ListItem Selected="True" Text="Select a car..." Value=""></asp:ListItem>
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT model, Id FROM Cars WHERE (owner_id = @owner_id) AND (Id NOT IN (SELECT car_id FROM rentals))">
@@ -23,7 +23,7 @@
     <br />
 
     <asp:Label ID="labelPrice" runat="server" Text="Label">Price per day: </asp:Label>
-    <asp:TextBox ID="textBoxPrice" runat="server"></asp:TextBox>
+    <asp:TextBox class="input-style" ID="textBoxPrice" runat="server"></asp:TextBox>
 
     <asp:RegularExpressionValidator ID="priceRegularExpressionValidator" 
         ValidationExpression="^\d{0,8}(\.\d{1,2})?$" 
