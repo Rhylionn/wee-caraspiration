@@ -17,6 +17,7 @@
 
         <asp:SiteMapDataSource ID="DefaultSiteMapDataSource" runat="server" SiteMapProvider="DefaultSiteMap"/>
         <asp:SiteMapDataSource ID="UsersSiteMapDataSource" runat="server" SiteMapProvider="UsersSiteMap"/>
+        <asp:SiteMapDataSource ID="AdminSiteMapDataSource" runat="server" SiteMapProvider="AdminSiteMap"/>
         
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
@@ -38,7 +39,7 @@
 
                         <asp:RoleGroup Roles="admin">
                             <ContentTemplate>
-                                <asp:Menu ID="adminMenu" runat="server" Orientation="Horizontal" DataSourceID="UsersSiteMapDataSource" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
+                                <asp:Menu ID="adminMenu" runat="server" Orientation="Horizontal" DataSourceID="AdminSiteMapDataSource" StaticEnableDefaultPopOutImage="False" StaticDisplayLevels="2" CssClass="nav"></asp:Menu>
                             </ContentTemplate>
                         </asp:RoleGroup>
 
