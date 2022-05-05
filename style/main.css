@@ -6,19 +6,58 @@
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header{
+header {
+    padding: 10px;
     background-color: #BF4342;
     display: flex;
-    color: #fff;
-    text-decoration: none;
     justify-content: space-between;
 }
 
-.head-container{
+header a {
+    text-decoration: none;
+    transition: transform ease-in-out 100ms;
+    color: #000;
+}
+
+header a:hover {
+    background-color: #fff;
+}
+
+#menu {
+    height: 20px;
+    border-radius: 5px;
+    background-color: #FFF3E4;
+    border: solid #fff;
+}
+
+#login a {
+    color: #000;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #FFF3E4;
+    border: solid #fff;
+    text-decoration: none;
+}
+
+#login a:hover {
+    background-color: #fff;
+}
+
+#signInLoginView_loginName {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.level3 {
+    background-color: #FFF3E4;
+    border: solid #fff;
+}
+
+.head-container {
     height: 150px;
     background-color: #BF4342;
     text-align: center;
@@ -26,77 +65,78 @@ header{
     color: #fff;
 }
 
-.form-container{
-    background-color: #FFF3E4; 
-    display: flex; 
-    flex-direction: column; 
+.form-container {
+    background-color: #FFF3E4;
+    display: flex;
+    flex-direction: column;
     width: fit-content;
     margin: 30px 43.5% 30px;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
 }
 
-.row-form-container{
-    background-color: #FFF3E4; 
-    display: flex; 
-    flex-direction: column; 
+.row-form-container {
+    background-color: #FFF3E4;
+    display: flex;
+    flex-direction: column;
     width: fit-content;
     gap: 10px;
     margin: 30px 20px 30px;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
 }
 
-.triple-form-container{
-    background-color: #FFF3E4; 
-    display: flex; 
-    flex-direction: column; 
-    width: 500px;
+.triple-form-container {
+    background-color: #FFF3E4;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
     gap: 10px;
     margin: 30px 20px 30px;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
 }
 
-.btn-style{
-    text-decoration: none; 
-    color: #BF4342; 
-    background-color: #fff; 
-    padding: 5px; 
-    border-radius: 10px; 
-    border: solid black; 
-    cursor: pointer; 
+.btn-style,
+#bodyContent_Login1_LoginButton,
+#bodyContent_CreateUserWizard1___CustomNav0_StepNextButtonButton {
+    text-decoration: none;
+    color: #BF4342;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid black;
+    cursor: pointer;
     font-weight: bold;
 }
 
-.success-msg{
-    display: flex; 
-    flex-direction: column; 
+.success-msg {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.error-box{
-    background-color: #FFF3E4; 
-    display: flex; 
+.error-box {
+    background-color: #FFF3E4;
+    display: flex;
     gap: 30px;
-    flex-direction: column; 
+    flex-direction: column;
     width: 400px;
     margin: 30px 36% 30px;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
 }
 
-.input-style{
+.input-style {
     background-color: white;
     border-radius: 5px;
     width: 100%;
     border: 2px solid #000;
 }
 
-#bodyContent_carsListView_itemPlaceholderContainer{
+#bodyContent_carsListView_itemPlaceholderContainer, #bodyContent_myBookingsListView_itemPlaceholderContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
