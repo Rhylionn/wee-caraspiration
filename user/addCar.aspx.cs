@@ -40,7 +40,7 @@ public partial class user_addCar : System.Web.UI.Page
             {
                 string fileExtension = Path.GetExtension(fileUploadImage.FileName);
 
-                if (fileExtension.Equals(".jpg") || fileExtension.Equals(".JPG") || fileExtension.Equals(".jpeg") || fileExtension.Equals(".gif"))
+                if (fileExtension.Equals(".jpg") || fileExtension.Equals(".JPG") || fileExtension.Equals(".jpeg") || fileExtension.Equals(".gif") || fileExtension.Equals(".png"))
                 {
 
                     string imageStr = "~/images/cars/" + this.b64url() + fileExtension;
@@ -57,7 +57,7 @@ public partial class user_addCar : System.Web.UI.Page
                     selectCarCmd.Parameters.AddWithValue("@model", modelStr.ToLower());
                     selectCarCmd.Parameters.AddWithValue("@brand", brandStr.ToLower());
                     selectCarCmd.Parameters.AddWithValue("@year", int.Parse(yearStr));
-
+                    
                     Int32 affectedRows = (Int32) selectCarCmd.ExecuteScalar();
 
                     con.Close();
