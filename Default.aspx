@@ -40,36 +40,36 @@
                     <div style="display: flex; flex-direction: column; width: 32%; justify-content: space-between;">
                         <div style="display: flex; gap: 5px;">
                             <b>User name:</b>
-                            
+
                             <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
                             <b>Model:</b>
-                            
+
                             <asp:Label ID="carModelLabel" runat="server" Text='<%# Eval("carModel") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
                             <b>Energy:</b>
-                            
+
                             <asp:Label ID="carEnergyLabel" runat="server" Text='<%# Eval("carEnergy") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
                             <b>Range:</b>
-                            
+
                             <asp:Label ID="carRangeLabel" runat="server" Text='<%# Eval("carRange") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
                             <b>Price:</b>
-                            
+
                             <asp:Label ID="rentalPriceLabel" runat="server" Text='<%# Eval("rentalPrice") %>' />
                         </div>
                         <br />
                         <div style="display: flex; gap: 5px;">
-                            <asp:HyperLink id="hyperLinkRentalinfo" class="btn-style" 
+                            <asp:HyperLink id="hyperLinkRentalinfo" class="btn-style"
                                 NavigateUrl='<%# "rentalInfo.aspx?rent=" + Eval("rentalId") %>' Text="Show more"
                                 runat="server" />
                         </div>
