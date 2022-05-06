@@ -65,13 +65,13 @@
             <div>
                 <div>
                     <asp:Label ID="startDateLabel" runat="server" Text="<b>Starting date:</b>"></asp:Label>
-                    <asp:TextBox ID="startDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
+                    <asp:TextBox class="input-style" ID="startDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
                     <asp:CalendarExtender ID="startDateCE" Format="dd/MM/yyyy" runat="server"
                         TargetControlID="startDateTextbox"></asp:CalendarExtender>
                 </div>
                 <div>
                     <asp:Label ID="endDateLabel" runat="server" Text="<b>Ending date:</b>"></asp:Label>
-                    <asp:TextBox ID="endDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
+                    <asp:TextBox class="input-style" ID="endDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
                     <asp:CalendarExtender ID="endDateCE" Format="dd/MM/yyyy" runat="server"
                         TargetControlID="endDateTextbox"></asp:CalendarExtender>
                 </div>
@@ -87,7 +87,7 @@
             <p>This is a fake form for the purpose of the assignment.</p>
             <div>
                 <asp:Label ID="cardNumberLabel" runat="server" Text="<b>Card number:</b>"></asp:Label>
-                <asp:TextBox ID="cardNumberTextbox" runat="server"></asp:TextBox>
+                <asp:TextBox class="input-style" ID="cardNumberTextbox" runat="server"></asp:TextBox>
 
                 <asp:RegularExpressionValidator ID="cardNumberREV" runat="server" ControlToValidate="cardNumberTextbox"
                     ErrorMessage="Please enter valid card number" ValidationExpression="^\d+">
@@ -96,18 +96,18 @@
                 <br />
 
                 <asp:Label ID="cardNameLabel" runat="server" Text="<b>Card Name:</b>"></asp:Label>
-                <asp:TextBox ID="cardNameTextbox" runat="server" autocomplete="off"></asp:TextBox>
+                <asp:TextBox class="input-style" ID="cardNameTextbox" runat="server" autocomplete="off"></asp:TextBox>
 
                 <br />
 
                 <asp:Label ID="cardDateLabel" runat="server" Text="<b>Expiry date:</b>"></asp:Label>
-                <asp:TextBox ID="cardDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
+                <asp:TextBox class="input-style" ID="cardDateTextbox" runat="server" autocomplete="off"></asp:TextBox>
                 <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="cardDateTextbox"
                     Format="MM/yy"></asp:CalendarExtender>
                 <br />
 
                 <asp:Label ID="cardCvvLabel" runat="server" Text="<b>Security code:</b>"></asp:Label>
-                <asp:TextBox ID="cardCvvTextbox" runat="server" autocomplete="off"></asp:TextBox>
+                <asp:TextBox class="input-style" ID="cardCvvTextbox" runat="server" autocomplete="off"></asp:TextBox>
 
                 <asp:RegularExpressionValidator ID="cardCvvREV" runat="server" ControlToValidate="cardCvvTextbox"
                     ErrorMessage="Please enter valid security code" ValidationExpression="^\d+">
