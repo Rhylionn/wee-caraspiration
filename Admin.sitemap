@@ -8,6 +8,7 @@
     <siteMapNode url="~/user/myBookings.aspx" title="My bookings"  description="Displays user's bookings" />
     <siteMapNode title="Manage"  description="Management">
       <siteMapNode url="~/admin/viewCars.aspx" title="Cars"  description="Manage user's cars" />
+      <siteMapNode url="~/admin/viewBookings.aspx" title="Bookings"  description="Manage user's bookings" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>

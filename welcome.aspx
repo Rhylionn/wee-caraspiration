@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="welcome.aspx.cs" Inherits="welcome" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
     <title>CarASPiration - Welcome</title>
     <link rel="stylesheet" href="style/welcome.css" />
@@ -39,6 +41,17 @@
                                 <td>
                                     <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                    <asp:PasswordStrength ID="PS" runat="server"
+                                        TargetControlID="Password"
+                                        StrengthIndicatorType="Text"
+                                        PreferredPasswordLength="10"
+                                        DisplayPosition="BelowLeft"
+                                        PrefixText="Strength:"
+                                        MinimumNumericCharacters="0"
+                                        MinimumSymbolCharacters="0"
+                                        RequiresUpperAndLowerCaseCharacters="false"
+                                        TextStrengthDescriptions="Very Poor;Weak;Average;Strong;Excellent"
+                                        CalculationWeightings="50;15;15;20" />
                                 </td>
                             </tr>
                             <tr>
