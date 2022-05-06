@@ -13,9 +13,9 @@
     </div>
 
     <div id="login-register-container">
-    <div id="login-container">
-        <asp:Login ID="Login1" runat="server"></asp:Login>
-    </div>
+        <div id="login-container">
+            <asp:Login ID="Login1" runat="server"></asp:Login>
+        </div>
     <div id="register-container">
         <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser">
             <WizardSteps>
@@ -90,6 +90,4 @@
             </WizardSteps>
         </asp:CreateUserWizard>
     </div>
-</div>
 </asp:Content>
-

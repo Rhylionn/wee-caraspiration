@@ -22,7 +22,7 @@
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
         <header>
-            <div>
+            <div id="menu">
                 <asp:LoginView ID="menuLoginView" runat="server">
 
                     <AnonymousTemplate>
@@ -46,7 +46,7 @@
                     </RoleGroups>
                 </asp:LoginView>
             </div>
-            <div>
+            <div id="login">
                 <asp:LoginView ID="signInLoginView" runat="server">
 
                     <AnonymousTemplate>
