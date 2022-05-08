@@ -27,6 +27,24 @@ header a:hover {
     background-color: #fff;
 }
 
+#login-register-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#login-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFF3E4;
+}
+
+#register-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFF3E4;
+}
+
 #menu {
     height: 20px;
     border-radius: 5px;
@@ -97,7 +115,7 @@ header a:hover {
     border-radius: 10px;
 }
 
-#about-container{
+#about-container {
     background-color: #FFF3E4;
     width: 70%;
     display: flex;
@@ -153,8 +171,28 @@ header a:hover {
     justify-content: space-around;
 }
 
-.td-style{
+.td-style {
     background-color: #ecf0f1;
-    padding: 2px; 
+    padding: 2px;
     text-align: center;
+}
+
+.graph-container {
+    text-align: center;
+    gap: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #FFF3E4;
+    display: flex;
+    justify-content: center;
+}
+
+.stat-container {
+    padding: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #FFF3E4;
 }
