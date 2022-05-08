@@ -26,7 +26,7 @@ public partial class admin_viewBookings : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(dbString);
 
-        string selectQuery = "SELECT Rentals_booking.Id, Cars.model, Cars.owner_id AS owner, rentals.tenant_id AS tenant, Rentals_booking.startDate, Rentals_booking.endDate FROM Rentals_booking INNER JOIN rentals ON Rentals_booking.rental_id = rentals.Id INNER JOIN Cars ON rentals.car_id = Cars.Id";
+        string selectQuery = "SELECT Rentals_booking.Id, Cars.model, Cars.owner_id AS owner, rentals.tenant_id AS tenant, convert(varchar, Rentals_booking.startDate, 103) AS startDate, convert(varchar, Rentals_booking.endDate, 103) AS endDate FROM Rentals_booking INNER JOIN rentals ON Rentals_booking.rental_id = rentals.Id INNER JOIN Cars ON rentals.car_id = Cars.Id";
 
         con.Open();
         SqlCommand cmd = new SqlCommand(selectQuery, con);

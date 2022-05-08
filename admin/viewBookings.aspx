@@ -27,13 +27,20 @@
                 </td>
                 <td class="td-style">
                     <asp:TextBox class="input-style" ID="startDateTextBox" runat="server" Text='<%# Bind("startDate") %>' />
-                    <asp:CalendarExtender ID="startDateCE" Format="dd/MM/yyyy" runat="server"
+                    <asp:CalendarExtender 
+                        ID="startDateCE"
+                        Format="dd/MM/yyyy" 
+                        runat="server"
                         TargetControlID="startDateTextBox"></asp:CalendarExtender>
                 </td>
                 <td class="td-style">
                     <asp:TextBox class="input-style" ID="endDateTextBox" runat="server" Text='<%# Bind("endDate") %>' />
-                    <asp:CalendarExtender ID="endDateCE" Format="dd/MM/yyyy" runat="server"
-                        TargetControlID="endDateTextBox"></asp:CalendarExtender>
+                    <asp:CalendarExtender 
+                        ID="endDateCE" 
+                        Format="dd/MM/yyyy" 
+                        runat="server"
+                        TargetControlID="endDateTextBox">
+                    </asp:CalendarExtender>
                 </td>
                 <td>
                     <asp:Button class="btn-style" ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
