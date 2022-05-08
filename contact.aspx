@@ -12,7 +12,7 @@
     <div style="display: flex; justify-content: center;">
         <div class="row-form-container">
             <h2>Mail Us :</h2>
-            <p>caraspi.contact@prontonmail.com</p>
+            <p>caraspi.contact@protonmail.com</p>
 
             <h2>Phone Us :</h2>
             <p>+45 27-31-79-36</p>
