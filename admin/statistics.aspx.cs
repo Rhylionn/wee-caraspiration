@@ -91,10 +91,7 @@ public partial class admin_statistics : System.Web.UI.Page
         int result7 = 0;
         try
         {
-            SqlCommand cmd7 = new SqlCommand("SELECT COUNT(*) FROM [aspnet_UsersInRoles] WHERE RoleId = 'baf23df3-5af6-4e5d-866b-4fb400605085'");
-            cmd7.CommandType = System.Data.CommandType.Text;
-            cmd7.Connection = conn;
-            result7 = (int)cmd7.ExecuteScalar();
+            result7 = Roles.GetUsersInRole("admin").Length;
         }
         catch (Exception err)
         {
