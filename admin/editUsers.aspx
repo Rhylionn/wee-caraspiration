@@ -113,5 +113,5 @@
         </SelectedItemTemplate>
     </asp:ListView>
 
-    <asp:Label ID="feedbackMessage" runat="server" Text=""></asp:Label>
+    <asp:Label class="success-msg" ID="feedbackMessage" runat="server" Text=""></asp:Label>
 </asp:Content>

@@ -7,8 +7,61 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
-        <h1>Statistics</h1>
+        <h1>Dashboard</h1>
     </div>
+
+    <div style="margin: 20px 0 20px; display: flex;justify-content: space-around;">
+        <div class="stat-container">
+            <h2>Cars and rentals</h2><u>Number of Cars:</u>
+
+            <asp:Label ID="numberOfCars" runat="server" Text=""></asp:Label>
+
+            <br />
+            <u>Number of rentals:</u>
+
+            <asp:Label ID="numberOfRentals" runat="server" Text=""></asp:Label>
+
+            <br />
+            <u>Number of users renting:</u>
+
+            <asp:Label ID="numberOfUsersRenting" runat="server" Text=""></asp:Label>
+
+            <br />
+            <u>Number of cars rented:</u>
+
+            <asp:Label ID="numberOfCarsRented" runat="server" Text=""></asp:Label>
+        </div>
+
+        <div class="stat-container">
+            <h2>Prices</h2>
+            <u>Average rental price:</u>
+
+            <asp:Label ID="averagePrice" runat="server" Text=""></asp:Label> $
+
+            <br />
+            <u>Max rental price:</u>
+
+            <asp:Label ID="maxPrice" runat="server" Text=""></asp:Label> $
+
+            <br />
+            <u>Min rental price:</u>
+
+            <asp:Label ID="minPrice" runat="server" Text=""></asp:Label> $
+
+        </div>
+        <div class="stat-container">
+            <h2>Moderation</h2>
+            <u>Number of all online users:</u>
+
+            <asp:Label ID="numberOfUsers" runat="server" Text=""></asp:Label>
+
+            <br />
+            <u>Number of admins:</u>
+
+            <asp:Label ID="numberOfAdmins" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+
     <div style="margin-top: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
         <div class="graph-container">
             <h2>Autonomy by model</h2>
@@ -288,57 +341,7 @@
         </div>
     </div>
 
-    <div style="margin: 20px 0 20px; display: flex;justify-content: space-around;">
-        <div class="stat-container">
-        <h2>Cars and rentals</h2><u>Number of Cars:</u>
-        
-        <asp:Label ID="numberOfCars" runat="server" Text=""></asp:Label>
 
-        <br />
-            <u>Number of rentals:</u>
-        
-        <asp:Label ID="numberOfRentals" runat="server" Text=""></asp:Label>
-
-        <br />
-            <u>Number of users renting:</u>
-        
-        <asp:Label ID="numberOfUsersRenting" runat="server" Text=""></asp:Label>
-
-        <br />
-<u>Number of cars rented:</u>
-        
-        <asp:Label ID="numberOfCarsRented" runat="server" Text=""></asp:Label>
-    </div>
-        
-<div class="stat-container">
-        <h2>Prices</h2>
-<u>Average rental price:</u>
-        
-        <asp:Label ID="averagePrice" runat="server" Text=""></asp:Label> $
-
-        <br />
-<u>Max rental price:</u>
-        
-        <asp:Label ID="maxPrice" runat="server" Text=""></asp:Label> $
-
-        <br />
-<u>Min rental price:</u>
-        
-        <asp:Label ID="minPrice" runat="server" Text=""></asp:Label> $
-
-        </div>
-        <div class="stat-container">
-        <h2>Moderation</h2>
-        <u>Number of all online users:</u>
-        
-        <asp:Label ID="numberOfUsers" runat="server" Text=""></asp:Label>
-
-        <br />
-<u>Number of admins:</u>
-        
-        <asp:Label ID="numberOfAdmins" runat="server" Text=""></asp:Label>
-    </div>
-</div>
 
     <asp:Label class="success-msg" ID="errorMessage" runat="server" Text=""></asp:Label>
 
