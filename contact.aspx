@@ -5,6 +5,22 @@
     <link rel="stylesheet" href="contact.aspx" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
-    <h1>Contact page</h1>
-</asp:Content>
+    <div class="head-container">
+        <h1>Contact</h1>
+        <h5>Any questions for us?</h5>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <div class="row-form-container">
+            <h2>Mail Us :</h2>
+            <p>caraspi.contact@prontonmail.com</p>
 
+            <h2>Phone Us :</h2>
+            <p>+45 27-31-79-36</p>
+
+            <h2>Postal Address :</h2>
+            <p><b>Street:</b> Krogvænget 99</p>
+            <p><b>City:</b> København V</p>
+            <p><b>State/province/area:</b> Region Sjælland</p>
+        </div>
+    </div>
+</asp:Content>

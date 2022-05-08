@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
         <h1>My bookings</h1>
+        <h5>Here is a list of your bookings</h5>
     </div>
 
     <asp:ListView ID="myBookingsListView" runat="server" DataKeyNames="bookingId" DataSourceID="SqlDataSource1"

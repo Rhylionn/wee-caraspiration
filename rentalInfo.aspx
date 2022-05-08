@@ -7,6 +7,7 @@
 
     <div class="head-container">
         <h1>More information</h1>
+        <h5>Want to learn more about this car?</h5>
     </div>
 
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1"

@@ -5,37 +5,41 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
-    <h1>View bookings</h1>
-    <asp:ListView ID="bookingsListView" runat="server" DataKeyNames="Id" OnItemDeleting="bookingsListView_ItemDeleting" OnItemEditing="bookingsListView_ItemEditing" OnItemUpdating="bookingsListView_ItemUpdating" OnItemCanceling="bookingsListView_ItemCanceling">
+    <div class="head-container">
+        <h1>View bookings</h1>
+    </div>
+    <asp:ListView ID="bookingsListView" runat="server" DataKeyNames="Id" OnItemDeleting="bookingsListView_ItemDeleting"
+        OnItemEditing="bookingsListView_ItemEditing" OnItemUpdating="bookingsListView_ItemUpdating"
+        OnItemCanceling="bookingsListView_ItemCanceling">
         <EditItemTemplate>
-            <tr style="">
-                <td>
+            <tr>
+                <td class="td-style">
                     <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="modelLabelEdit" runat="server" Text='<%# Bind("model") %>'></asp:Label>
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="ownerLabelEdit" runat="server" Text='<%# Bind("owner") %>'></asp:Label>
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="tenantLabelEdit" runat="server" Text='<%# Bind("tenant") %>'></asp:Label>
                 </td>
-                <td>
-                    <asp:TextBox ID="startDateTextBox" runat="server" Text='<%# Bind("startDate") %>' />
+                <td class="td-style">
+                    <asp:TextBox class="input-style" ID="startDateTextBox" runat="server" Text='<%# Bind("startDate") %>' />
                     <asp:CalendarExtender ID="startDateCE" Format="dd/MM/yyyy" runat="server"
                         TargetControlID="startDateTextBox"></asp:CalendarExtender>
                 </td>
-                <td>
-                    <asp:TextBox ID="endDateTextBox" runat="server" Text='<%# Bind("endDate") %>' />
+                <td class="td-style">
+                    <asp:TextBox class="input-style" ID="endDateTextBox" runat="server" Text='<%# Bind("endDate") %>' />
                     <asp:CalendarExtender ID="endDateCE" Format="dd/MM/yyyy" runat="server"
                         TargetControlID="endDateTextBox"></asp:CalendarExtender>
                 </td>
                 <td>
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                    <asp:Button class="btn-style" ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                 </td>
                 <td>
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                    <asp:Button class="btn-style" ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                 </td>
             </tr>
         </EditItemTemplate>
@@ -48,22 +52,22 @@
         </EmptyDataTemplate>
         <ItemTemplate>
             <tr style="">
-                <td>
+                <td class="td-style">
                     <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="modelLabel" runat="server" Text='<%# Eval("model") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="ownerLabel" runat="server" Text='<%# Eval("owner") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="tenantLabel" runat="server" Text='<%# Eval("tenant") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="startDateLabel" runat="server" Text='<%# Eval("startDate") %>' />
                 </td>
-                <td>
+                <td class="td-style">
                     <asp:Label ID="endDateLabel" runat="server" Text='<%# Eval("endDate") %>' />
                 </td>
                 <td>
@@ -75,11 +79,11 @@
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
-            <table runat="server">
+            <table runat="server" style=" display: flex; justify-content: space-between;">
                 <tr runat="server">
                     <td runat="server">
                         <table id="itemPlaceholderContainer" runat="server" border="0" style="">
-                            <tr runat="server" style="">
+                            <tr runat="server" style="background-color: #FFF3E4;">
                                 <th runat="server">Id</th>
                                 <th runat="server">model</th>
                                 <th runat="server">owner</th>
@@ -121,6 +125,5 @@
         </SelectedItemTemplate>
     </asp:ListView>
 
-    <asp:Label ID="feedbackMessage" runat="server" Text=""></asp:Label>
+    <asp:Label class="success-msg" ID="feedbackMessage" runat="server" Text=""></asp:Label>
 </asp:Content>
-

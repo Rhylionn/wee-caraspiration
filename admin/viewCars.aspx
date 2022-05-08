@@ -3,13 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
-    <h1>View cars</h1>
-
+    <div class="head-container">
+        <h1>View cars</h1>
+    </div>
     <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
     <asp:TextBox ID="emailTB" runat="server"></asp:TextBox>
-    <asp:Button ID="emailButton" runat="server" Text="Get" OnClick="emailButton_Click"/>
+    <asp:Button ID="emailButton" runat="server" Text="Get" OnClick="emailButton_Click" />
 
-    <asp:ListView ID="carsListView" runat="server" DataKeyNames="Id" GroupItemCount="3" OnItemDeleting="carsListView_ItemDeleting" OnItemEditing="carsListView_ItemEditing" OnItemUpdating="carsListView_ItemUpdating" OnItemCanceling="carsListView_ItemCanceling">
+    <asp:ListView ID="carsListView" runat="server" DataKeyNames="Id" GroupItemCount="3"
+        OnItemDeleting="carsListView_ItemDeleting" OnItemEditing="carsListView_ItemEditing"
+        OnItemUpdating="carsListView_ItemUpdating" OnItemCanceling="carsListView_ItemCanceling">
         <EditItemTemplate>
             <td runat="server" style="">
                 owner_id:
@@ -46,7 +49,7 @@
             </table>
         </EmptyDataTemplate>
         <EmptyItemTemplate>
-<td runat="server" />
+            <td runat="server" />
         </EmptyItemTemplate>
         <GroupTemplate>
             <tr id="itemPlaceholderContainer" runat="server">
@@ -94,7 +97,8 @@
                     <td runat="server" style="">
                         <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
                             <Fields>
-                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True"
+                                    ShowLastPageButton="True" />
                             </Fields>
                         </asp:DataPager>
                     </td>
@@ -128,4 +132,3 @@
 
     <asp:Label ID="feedbackLabel" runat="server" Text=""></asp:Label>
 </asp:Content>
-

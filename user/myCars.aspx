@@ -6,8 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
         <h1>My cars</h1>
+        <h5>Here is a list of your cars</h5>
     </div>
-    <asp:ListView ID="carsListView" class="mycars" runat="server" OnItemDeleting="carsListView_ItemDeleting"
+    <asp:ListView ID="carsListView" runat="server" OnItemDeleting="carsListView_ItemDeleting"
         OnItemEditing="carsListView_ItemEditing" OnItemUpdating="carsListView_ItemUpdating"
         OnItemCanceling="carsListView_ItemCanceling">
         

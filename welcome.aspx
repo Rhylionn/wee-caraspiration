@@ -8,8 +8,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
-
-        <h1>Login/Register</h1>
+        <h1>Welcome!</h1>
+        <h5>Connect or Create your account and start to driving luxury cars!</h5>
     </div>
 
     <div id="login-register-container">
