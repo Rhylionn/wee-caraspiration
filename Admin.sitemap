@@ -6,10 +6,11 @@
       <siteMapNode url="~/user/leaseMyCar.aspx" title="Lease a car"  description="Lease a user's car" />
     </siteMapNode>
     <siteMapNode url="~/user/myBookings.aspx" title="My bookings |"  description="Displays user's bookings" />
-    <siteMapNode title="Manage"  description="Management">
+    <siteMapNode title="Manage |"  description="Management">
       <siteMapNode url="~/admin/viewCars.aspx" title="Cars"  description="Manage user's cars" />
       <siteMapNode url="~/admin/viewBookings.aspx" title="Bookings"  description="Manage user's bookings" />
       <siteMapNode url="~/admin/editUsers.aspx" title="Users"  description="Manage users" />
     </siteMapNode>
+    <siteMapNode url="~/admin/statistics.aspx" title="Dashboard"  description="Statistics" />
   </siteMapNode>
 </siteMap>
