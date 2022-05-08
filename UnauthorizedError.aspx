@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
     <h1>Error 401 - Unauthorized</h1>
+    <h5>Oups! Something went wrong? Try again or contact us</h5>
 </div>
 <div class="error-box">
     <h3>You don't have the necessary rights to access this page</h3>

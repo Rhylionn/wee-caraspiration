@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
     <h1>Error 404</h1>
+    <h5>Oups! Something went wrong? Try again or contact us</h5>
 </div>
 <div class="error-box">
 <h3>We couldn't find the page you are searching for :(</h3>

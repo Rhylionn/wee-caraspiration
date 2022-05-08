@@ -7,6 +7,7 @@
 
     <div class="head-container">
         <h1>Lease a car</h1>
+        <h5>Last step and everyone will be able to rent your magnificent car</h5>
     </div>
 
     <div class="form-container">

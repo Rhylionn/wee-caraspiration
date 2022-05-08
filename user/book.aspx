@@ -8,6 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
     <div class="head-container">
         <h1>Book a car</h1>
+        <h5>Enter your informations and this car is yours!</h5>
     </div>
     <div style="display: flex; justify-content: center;">
         <div class="row-form-container">
