@@ -84,7 +84,7 @@
 
         </ItemTemplate>
         <LayoutTemplate>
-            <table runat="server">
+            <table runat="server" style="display: flex; justify-content: space-around;">
                 <tr runat="server">
                     <td runat="server">
                         <table id="groupPlaceholderContainer" runat="server" border="0" style="">
