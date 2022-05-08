@@ -19,6 +19,12 @@ public partial class welcome : System.Web.UI.Page
     protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
     {
         string username = CreateUserWizard1.UserName;
-        Roles.AddUserToRole(username, "user");
+        try
+        {
+            Roles.AddUserToRole(username, "user");
+        }
+        catch (Exception err) {
+            Response.Redirect(FormsAuthentication.DefaultUrl);
+        }
     }
 }
