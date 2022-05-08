@@ -79,7 +79,7 @@
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
-            <table runat="server" style=" display: flex; justify-content: space-between;">
+            <table runat="server" style=" display: flex; justify-content: center;">
                 <tr runat="server">
                     <td runat="server">
                         <table id="itemPlaceholderContainer" runat="server" border="0" style="">
